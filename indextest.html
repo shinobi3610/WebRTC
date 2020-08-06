@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>VIDEO CALL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <center id="wrapper">
+    <h1>NHÓM 18 CALL VIDEO</h1>
+    
+    <div id="askTurnOnMic" style="display: none;">
+      <p>Please accept camera/microphone permissions</p>
+    </div>
+
+    <div id="micDenided" style="display: none;">
+      <p>Error: Cannot connect to micro</p>
+    </div>
+
+    <div id="errInvalidLink" style="display: none;">
+      <p>Error: Invalid URL</p>
+    </div>
+
+    <div id="hangupMsg" style="display: none;">
+      <p>CUỘC GỌI ĐÃ KẾT THÚC</p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <small><span class="btn" onclick="window.location.reload()">Retry</span></small>
+    </div>
+
+    <div id="mainApp" style="display: none;">
+      link room:<br/>
+      <small id="curent_url" style="overflow-wrap: anywhere;" onclick="selectText('curent_url')"></small>
+      <br/>
+      <br/>
+
+      <div id="videoView">
+        
+        <video id="remoteVideo" autoplay playsinline controls></video>
+        <video id="localVideo" autoplay playsinline controls muted></video>
+      </div>
+      
+      <p><b>Trạng thái: </b><span id="Trạng thái">đang đợi kết nối...</span></p>
+      <p style="max-width: 900px;"><small>
+      
+
+        <br/>
+        <span id="timer"></span>
+        <span class="btn" onclick="toggleMute()" id="toggleMuteBtn">Mute</span>
+        <span class="btn" onclick="hangup()" id="hangupBtn">End call</span>
+  
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+      </small></p>
+    </div>
+  </center>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="utils.js"></script>
+  <script src="controls.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
